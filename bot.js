@@ -474,9 +474,9 @@ var commands = {
 		    if(!txt || txt.isEmpty() == true){txt = "No comment."}
 		    if(txt.length > 188){return "HEY EVERYONE?! COME TAKE A LOOK AT THIS FUCKIN RETARD WHO IS TRYING TO MESS WITh ME! BUT I AM NOT A DUMBASS! I AM WISE! GO KYS bitch! AUTISTIC MOTHERFUCKIN KIDDIE!?"}
 		    cmdcount++
-		    return ("<h3>A message has been sent into the command terminal. An admin monitoring the terminal will see your message!</h3>\n\n\n Your sent message: " + [txt])
-		    //return ("--<br><h3>A message has been sent into the command terminal. An admin monitoring the terminal will see your message!</h3>\n\n\n Your sent message: " + [txt])
 		    console.log('You have a new message!!\n"' + txt + '"')
+		    return "<h3>A message has been sent into the command terminal. An admin monitoring the terminal will see your message!</h3>\n\n\n Your sent message: " + [txt]
+		    //return "--<br><h3>A message has been sent into the command terminal. An admin monitoring the terminal will see your message!</h3>\n\n\n Your sent message: " + [txt]
 	    },
 	    date(txt){
 		    if(txt.startsWith(prefix)){return "hahahaha nice command lmao hahaha fuck you"}
