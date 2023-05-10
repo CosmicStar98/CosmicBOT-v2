@@ -1,1 +1,1 @@
-# CosmicBOT-v2
+# CosmicBOT v2
