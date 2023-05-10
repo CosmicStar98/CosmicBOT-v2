@@ -153,7 +153,7 @@ var commands = {
 	    copypastas(txt){
 		    if(txt.startsWith(prefix)){return "hahahaha nice command lmao hahaha fuck you"}
 		    cmdcount++
-		    return '--<br><h3>' + name + '</h3><h5>Developed by: ' + dev + '</h5> <hr /><li>' + prefix + 'hub</li> <hr /><b>Copypastas:</b><hr /> <li>' + prefix + 'bigsmoke</li><br /> <li>' + prefix + 'drivepower</li><br /> <li>' + prefix + 'gabe</li><br />  <li>' + prefix + 'pacertest</li><br /> <li>' + prefix + 'triggered</li><br /> <li>' + prefix + 'cyberpunk</li><br /> <li>' + prefix + 'bonzibuddy</li><br /> <li>' + prefix + 'bonzibuddy2</li><br /> <li>' + prefix + 'bees</li><br /> <li>' + prefix + 'pawn</li><br /> <li>' + prefix + 'linux</li><br /> <li>' + prefix + 'wtf</li><br /> <hr /><h6>Commands  -  Copypastas.</h6><hr />'
+		    return '--<br><h3>' + name + '</h3><h5>Developed by: ' + dev + '</h5> <hr /><li>' + prefix + 'hub</li> <hr /><b>Copypastas:</b><hr /> <li>' + prefix + 'bigsmoke</li><br /> <li>' + prefix + 'drivepower</li><br /> <li>' + prefix + 'gabe</li><br />  <li>' + prefix + 'pacertest</li><br /> <li>' + prefix + 'triggered</li><br /> <li>' + prefix + 'cyberpunk</li><br /> <li>' + prefix + 'bonzibuddy</li><br /> <li>' + prefix + 'bonzibuddy2</li><br /> <li>' + prefix + 'navy</li><br /> <li>' + prefix + 'bees</li><br /> <li>' + prefix + 'pawn</li><br /> <li>' + prefix + 'linux</li><br /> <li>' + prefix + 'wtf</li><br /> <hr /><h6>Commands  -  Copypastas.</h6><hr />'
 		    console.log('Loaded copypastas menu.' + dash + network)
 	    },
 	    utilities(txt){
@@ -177,7 +177,7 @@ var commands = {
 	    misc(txt){
 		    if(txt.startsWith(prefix)){return "hahahaha nice command lmao hahaha fuck you"}
 		    cmdcount++
-		    return '--<br><h3>' + name + '</h3><h5>Developed by: ' + dev + '</h5> <hr /><li>' + prefix + 'hub</li> <hr /><b>Misc Commands:</b><hr /> <li>' + prefix + 'fakeerrors</li><br /> <li>' + prefix + 'sticker</li><br /> <li>' + prefix + 'voice [VOICE]</li><br /> <hr /><h6>Commands  -  Misc.</h6><hr />'
+		    return '--<br><h3>' + name + '</h3><h5>Developed by: ' + dev + '</h5> <hr /><li>' + prefix + 'hub</li> <hr /><b>Misc Commands:</b><hr /> <li>' + prefix + 'fakeerrors</li><br /> <li>' + prefix + 'sticker</li><br /> <hr /><h6>Commands  -  Misc.</h6><hr />'
 		    console.log('Loaded misc menu.' + dash + network)
 	    },
 	    changelog(txt){
@@ -372,6 +372,11 @@ var commands = {
 		    cmdcount++
 		    return 'The FitnessGram Pacer Test is a multistage aerobic capacity test that progressively gets more difficult as it continues. The 20 meter pacer test will begin in 30 seconds. Line up at the start. The running speed starts slowly, but gets faster each minute after you hear this signal. [beep] A single lap should be completed each time you hear this sound. [ding] Remember to run in a straight line, and run as long as possible. The second time you fail to complete a lap before the sound, your test is over. The test will begin on the word start. On your mark, get ready, start.'
 	    },
+	    navy(txt) {
+		    if(txt.startsWith(prefix)){return "hahahaha nice copypasta lmao hahaha fuck you"}
+		    cmdcount++
+		    return "What the fuck did you just fucking say about me, you little bitch? I'll have you know I graduated top of my class in the Navy Seals, and I've been involved in numerous secret raids on Al-Quaeda, and I have over 300 confirmed kills. I am trained in gorilla warfare and I'm the top sniper in the entire US armed forces. You are nothing to me but just another target. I will wipe you the fuck out with precision the likes of which has never been seen before on this Earth, mark my fucking words. You think you can get away with saying that shit to me over the Internet? Think again, fucker. As we speak I am contacting my secret network of spies across the USA and your IP is being traced right now so you better prepare for the storm, maggot. The storm that wipes out the pathetic little thing you call your life. You're fucking dead, kid. I can be anywhere, anytime, and I can kill you in over seven hundred ways, and that's just with my bare hands. Not only am I extensively trained in unarmed combat, but I have access to the entire arsenal of the United States Marine Corps and I will use it to its full extent to wipe your miserable ass off the face of the continent, you little shit. If only you could have known what unholy retribution your little 'clever' comment was about to bring down upon you, maybe you would have held your fucking tongue. But you couldn't, you didn't, and now you're paying the price, you goddamn idiot. I will shit fury all over you and you will drown in it. You're fucking dead, skiddo."
+	    },
 	    asshole(txt){
 		    if(txt.startsWith(prefix)){return "hahahaha nice asshole... no homo lmao"}
 		    if(!txt || txt.isEmpty() == true){txt = "BonziBuddy"}
@@ -528,13 +533,6 @@ var commands = {
 		    cmdcount++
 		    return '--<br><h2>BonziWORLD cannot run on this platform.</h2><br>Unfortunately, BonziWORLD cannot run in this browser!<br>You can try to download a BonziWORLD app that works on your device, or update your browser.'
 		    console.log('Loaded unsupported error message.' + dash + network)
-	    },
-	    voice(txt){
-		    if(txt.startsWith(prefix)){return "hahehaheha nice command lmfao xddddxd fuck you"}
-		    if(!txt || txt.isEmpty() == true){txt = voice}
-		    cmdcount++
-		    socket.emit('command', {list:['voice',txt]})
-		    console.log('Changed the voice to: ' + txt + dash + network)
 	    },
 	    mute_all(txt){
 		    if(login_room != "test" || "bot_dev" || "dev" || "bot_development" || "development") {
