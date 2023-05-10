@@ -426,11 +426,11 @@ var commands = {
 	    coinflip(txt){
 		    if(txt.startsWith(prefix)){return "hahahaha nice command lmao hahaha fuck you"}
 		    if (Math.random() < 0.5) {
-                return "The coin has landed on, <b>tails</b><div><h6>Dont ask where sonic is</h6>"
-                //return "--<br>The coin has landed on, <b>tails</b><div><h6>Dont ask where sonic is</h6>"
+                	return "The coin has landed on, <b>tails</b><div><h6>Dont ask where sonic is</h6>"
+                	//return "--<br>The coin has landed on, <b>tails</b><div><h6>Dont ask where sonic is</h6>"
 		    } else {
-                return "The coin has landed on, <b>heads</b>"
-                //return "--<br>The coin has landed on, <b>heads</b>"
+                	return "The coin has landed on, <b>heads</b>"
+                	//return "--<br>The coin has landed on, <b>heads</b>"
 		    }
 	    },
 	    "8ball"(txt){
@@ -457,11 +457,11 @@ var commands = {
 		    if(txt.length > 56){return "HEY EVERYONE?! COME TAKE A LOOK AT THIS FUCKIN RETARD WHO IS TRYING TO MESS WITh ME! BUT I AM NOT A DUMBASS! I AM WISE! GO KYS bitch! AUTISTIC MOTHERFUCKIN KIDDIE!?"}
 		    cmdcount++
 		    if(txt.toLowerCase().includes("fune") || txt.toLowerCase().includes("fuckune")){
-                return txt + "'s IQ is: <b>" + Math.floor(Math.random() * 10) + "</b>"
-                //return "--<br>" + txt + "'s IQ is: <b>" + Math.floor(Math.random() * 15) + "</b>"
+                	return txt + "'s IQ is: <b>" + Math.floor(Math.random() * 10) + "</b>"
+                	//return "--<br>" + txt + "'s IQ is: <b>" + Math.floor(Math.random() * 15) + "</b>"
 		    } else {
-                return txt + "'s IQ is: <b>" + Math.floor(Math.random() * 200) + "</b>"
-                //return "--<br>" + txt + "'s IQ is: <b>" + Math.floor(Math.random() * 200) + "</b>"
+                	return txt + "'s IQ is: <b>" + Math.floor(Math.random() * 200) + "</b>"
+                	//return "--<br>" + txt + "'s IQ is: <b>" + Math.floor(Math.random() * 200) + "</b>"
 		    }
 	    },
 	    botver(txt){
@@ -538,15 +538,15 @@ var commands = {
 	    },
 	    mute_all(txt){
 		    if(login_room != "test" || "bot_dev" || "dev" || "bot_development" || "development") {
-            if(txt.startsWith(prefix)){return "hahahaha nice fake error lmao hahaha fuck you"}
-                cmdcount++
-                return 'CosmicBOT development and testing commands are not enabled for public rooms!'
-                console.log('Blocked a development command.' + dash + network)
+		    if(txt.startsWith(prefix)){return "hahahaha nice fake error lmao hahaha fuck you"}
+                	cmdcount++
+                	return 'CosmicBOT development and testing commands are not enabled for public rooms!'
+                	console.log('Blocked a development command.' + dash + network)
 		    } else {
-                if(txt.startsWith(prefix)){return "hahahaha nice command lmao hahaha fuck you"}
-                cmdcount++
-                return '[[llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll BEGONE_KIDDIE.bat<br><b>Muted All</b>'
-                console.log('Killed the entire fucking tts.' + dash + network)
+                	if(txt.startsWith(prefix)){return "hahahaha nice command lmao hahaha fuck you"}
+                	cmdcount++
+                	return '[[llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll BEGONE_KIDDIE.bat<br><b>Muted All</b>'
+                	console.log('Killed the entire fucking tts.' + dash + network)
 		    }
 	    }
 };
