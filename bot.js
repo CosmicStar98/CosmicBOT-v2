@@ -165,7 +165,7 @@ var commands = {
 	    fun(txt){
 		    if(txt.startsWith(prefix)){return "jajajajaa cool command lmao hahaha shut the fuck up"}
 		    cmdcount++
-		    return '--<br><h3>' + name + '</h3><h5>Developed by: ' + dev + '</h5> <hr /><li>' + prefix + 'hub</li> <hr /><b>Fun Commands:</b><hr /> <li>' + prefix + 'joke</li><br /> <li>' + prefix + 'fact</li><br /> <li>' + prefix + 'skiddie</li><br /> <li>' + prefix + 'asshole</li><br /> <li>' + prefix + 'coinflip</li><br /> <li>' + prefix + 'clickbait [TEXT]</li><br /> <li>' + prefix + 'vaporwave</li><br /> <li>' + prefix + 'echo</li><br /> <li>' + prefix + '8ball</li><br /> <li>' + prefix + 'kill</li><br /> <li>' + prefix + 'iq</li><br /> <hr /><h6>Commands  -  Fun.</h6><hr />'
+		    return '--<br><h3>' + name + '</h3><h5>Developed by: ' + dev + '</h5> <hr /><li>' + prefix + 'hub</li> <hr /><b>Fun Commands:</b><hr /> <li>' + prefix + 'joke</li><br /> <li>' + prefix + 'fact</li><br /> <li>' + prefix + 'skiddie</li><br /> <li>' + prefix + 'asshole</li><br /> <li>' + prefix + 'coinflip</li><br /> <li>' + prefix + 'clickbait</li><br /> <li>' + prefix + 'vaporwave</li><br /> <li>' + prefix + 'echo</li><br /> <li>' + prefix + '8ball</li><br /> <li>' + prefix + 'kill</li><br /> <li>' + prefix + 'iq</li><br /> <hr /><h6>Commands  -  Fun.</h6><hr />'
 		    console.log('Loaded fun menu.' + dash + network)
 	    },
 	    media(txt){
@@ -333,9 +333,9 @@ var commands = {
 	    },
 	    clickbait(txt){
 		    if(txt.startsWith(prefix)){return "hahehaha epic clickbait lmfao heheheha fuck you"}
-		    if(!txt || txt.isEmpty() == true){txt = "Seamus vs. Fuckune epic battle at 3am"}
+		    if(!txt || txt.isEmpty() == true){txt = "Seamus versus, Fune epic battle at 3am in the backrooms!"}
 		    if(txt.length > 288){return "HEY EVERYONE?! COME TAKE A LOOK AT THIS FUCKIN RETARD WHO IS TRYING TO MESS WITh ME! BUT I AM NOT A DUMBASS! I AM WISE! GO KYS bitch! AUTISTIC MOTHERFUCKIN KIDDIE!?"}
-		    return (['omg!',':O','what?','wtf?!','wth?!','omfg!','lmao','xD','bruh', 'OMG!','WHAT?','WTF?!','WTH?!','OMFG!','LMAO','XD','BRUH'][Math.floor(Math.random()*17)]+' '+txt+' '+['(gone wrong)','(gone sexual)','(not clickbait!)','(cops called)','(no virus!)','(not fake!)','(real!?!)'][Math.floor(Math.random()*7)]+'\u{1F631}'.repeat(Math.ceil(Math.random()*5))+'\u{1F480}'.repeat(Math.ceil(Math.random()*3))).toUpperCase()
+		    return (['omg!',':O','what?','wtf?!','wth?!','omfg!','lmao','xD','bruh'][Math.floor(Math.random()*9)]+' '+txt+' '+['(gone wrong)','(gone sexual)','(not clickbait!)','(cops called)','(no virus!)','(not fake!)','(real!?!)', '(gone sus!!)'][Math.floor(Math.random()*8)]+'\u{1F631}'.repeat(Math.ceil(Math.random()*5))+'\u{1F480}'.repeat(Math.ceil(Math.random()*3))).toUpperCase()
 	    }, 
 	    cyberpunk(txt){
 		    if(txt.startsWith(prefix)){return "hahahaha nice copypasta lmao hahaha fuck you"}
@@ -379,7 +379,7 @@ var commands = {
 	    },
 	    asshole(txt){
 		    if(txt.startsWith(prefix)){return "hahahaha nice asshole... no homo lmao"}
-		    if(!txt || txt.isEmpty() == true){txt = "BonziBuddy"}
+		    if(!txt || txt.isEmpty() == true){txt = "Fune"}
 		    if(txt.length > 176){return "HEY EVERYONE?! COME TAKE A LOOK AT THIS FUCKIN RETARD WHO IS TRYING TO MESS WITh ME! BUT I AM NOT A DUMBASS! I AM WISE! GO KYS bitch! AUTISTIC MOTHERFUCKIN KIDDIE!?"}
 		    cmdcount++
 		    socket.emit('command', {list:['asshole',txt]})
@@ -444,7 +444,8 @@ var commands = {
 		    if(txt.length > 246){return "HEY EVERYONE?! COME TAKE A LOOK AT THIS FUCKIN RETARD WHO IS TRYING TO MESS WITh ME! BUT I AM NOT A DUMBASS! I AM WISE! GO KYS bitch! AUTISTIC MOTHERFUCKIN KIDDIE!?"}
 		    var num = Math.floor(Math.random() * Math.floor(eight_ball.length));
 		    cmdcount++
-		    return "- \u{1F3B1} " + eight_ball[num]
+            return "\u{1F3B1} " + eight_ball[num]
+		    //return "- \u{1F3B1} " + eight_ball[num]
 	    },
 	    kill(txt){
 		    if(txt.startsWith(prefix)){return "hahahaha nice command lmao hahaha fuck you"}
@@ -461,11 +462,11 @@ var commands = {
 		    if(!txt || txt.isEmpty() == true){txt = "Seamus"}
 		    if(txt.length > 56){return "HEY EVERYONE?! COME TAKE A LOOK AT THIS FUCKIN RETARD WHO IS TRYING TO MESS WITh ME! BUT I AM NOT A DUMBASS! I AM WISE! GO KYS bitch! AUTISTIC MOTHERFUCKIN KIDDIE!?"}
 		    cmdcount++
-		    if(txt.toLowerCase().includes("fune") || txt.toLowerCase().includes("fuckune")){
-                	return txt + "'s IQ is: <b>" + Math.floor(Math.random() * 10) + "</b>"
+		    if(txt.toLowerCase().includes("fune") || txt.toLowerCase().includes("fuckune") || txt.toLowerCase().includes("ziggy") || txt.toLowerCase().includes("gino")){
+                	return txt + "'s IQ is: <b>" + Math.floor(Math.random() * 7) + "</b>"
                 	//return "--<br>" + txt + "'s IQ is: <b>" + Math.floor(Math.random() * 15) + "</b>"
 		    } else {
-                	return txt + "'s IQ is: <b>" + Math.floor(Math.random() * 200) + "</b>"
+                	return txt + "'s IQ is: <b>" + Math.floor(Math.random() * 266) + "</b>"
                 	//return "--<br>" + txt + "'s IQ is: <b>" + Math.floor(Math.random() * 200) + "</b>"
 		    }
 	    },
