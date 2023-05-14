@@ -239,12 +239,7 @@ let commands = {
         "function": function(args) {
             let color = args[0];
 
-			if(Object.keys(colors).includes(color)){
-				var c = colors[color];
-				bot.socket.emit('command', {list:['color', c]})
-			} else {
-				bot.socket.emit('command', {list:['color']})
-			}
+            bot.socket.emit('command', {list:['color',color]})
         }
     },
     "help": {
@@ -257,24 +252,6 @@ let commands = {
         }
     }
 }
-
-let colors = [
-	"purple",
-	"magenta",
-	"pink",
-	"blue",
-	"cyan",
-	"red",
-	"orange",
-	"green",
-	"lime",	
-	"yellow",
-	"brown",
-	"black",
-	"grey",
-	"white",
-	"ghost"
-];
 
 exports.listen = function() {
     process.openStdin().addListener("data", function(input) {
