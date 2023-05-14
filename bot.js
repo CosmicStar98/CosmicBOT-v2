@@ -4,16 +4,11 @@
 const fs = require('fs');
 var io = require("socket.io-client")
 
+
 // Import the bot's setting files
 var cfg = require(__dirname + "/config/settings.json")
 var cfg_e = require(__dirname + "/config/settings.extra.json")
 
-
-// Catch errors
-process.on("uncaughtException", function(err) {
-  console.log(err.stack);
-  throw err;
-});
 
 // Monkey-patch js string to allow checking empty strings
 String.prototype.isEmpty = function() {
@@ -39,8 +34,6 @@ const minutes = new Date().getMinutes();
 const seconds = new Date().getSeconds();
 const log_timestamp = space + hours + colon + minutes + colon + seconds;
 
-
-
 // Bot config
 let prefix = cfg.prefs.prefixes["2"];
 const dev = cfg.prefs.appearance.dev;
@@ -52,17 +45,13 @@ const name = cfg.prefs.appearance.name["1"];
 const subname = "  {" + prefix + "hub}";
 const voice = cfg.prefs.voices["2"];
 
+// Login
 const login_name = '' + name + '' + subname;
 const login_channel = cfg.prefs.login.channels["1"];
 const login_version = cfg.prefs.login.version;
 const login_room = cfg.prefs.login.rooms["1"];
 const login_url = cfg.prefs.login.socket_url;
 const login_godword = cfg.prefs.cmds.godword;
-// The default playlists
-const spotify_playlists = cfg.prefs.cmds.spotify.playlists;
-const youtube_playlist = cfg.prefs.cmds.youtube.playlists.default;
-const vaporwave_ids = cfg.prefs.cmds.youtube.playlists.vaporwave;
-
 
 // Socials
 const discord_url = cfg.prefs.socials.discord;
@@ -72,6 +61,14 @@ const insta_url = cfg.prefs.socials.instagram;
 const github_url = cfg.prefs.socials.github;
 const pastebin_url = cfg.prefs.socials.pastebin;
 const replit_url = cfg.prefs.socials.replit;
+
+
+
+/**
+* Console commands
+**/
+const Console = require("./console.js");
+Console.listen();
 
 
 
@@ -98,6 +95,7 @@ socket.emit("command", { list: ["sanitize", "off"] });
 socket.emit("command", { list: ["pope"] });
 
 function reconnect() {
+	console.warn("Reconnecting...")
     var socket = io("" + login_url + "",{query:{ version: '' + login_version + '', channel: '' + login_channel + '' }})
     socket.emit('login',{name:'' + login_name + '',room:login_room})
     socket.emit("command", { list: ["status", status] });
@@ -136,12 +134,14 @@ socket.emit('command', {list:['pitch','77']})
 socket.emit('command', {list:['speed','146']})
 
 var cmdcount = 0;
-var sockets = []
 
 var wtf = cfg.prefs.cmds.wtf;
 var eight_ball = cfg.prefs.cmds["8ball"];
 var bees = cfg.prefs.cmds.bees;
 var stickers = cfg.prefs.cmds.stickers;
+const spotify_playlists = cfg.prefs.cmds.spotify.playlists;
+const youtube_playlist = cfg.prefs.cmds.youtube.playlists.default;
+const vaporwave_ids = cfg.prefs.cmds.youtube.playlists.vaporwave;
 
 
 var commands = {
@@ -573,10 +573,73 @@ socket.on('talk',function(data){
     }
 });
 
-/*socket.on('reconnect', ()=>{
+socket.on('reconnect', ()=>{
     reconnect()
-});*/
+});
 
 socket.on('disconnect', ()=>{
     reconnect()
 });
+
+socket.on('restarting', ()=>{
+    reconnect()
+});
+
+socket.on('kick', ()=>{
+    reconnect()
+});
+
+socket.on('nofuckoff', ()=>{
+    reconnect()
+});
+
+
+
+
+// Export - Variables
+exports.network = network;
+exports.dash = dash;
+exports.dot = dot;
+exports.slash = slash;
+exports.colon = colon;
+exports.space = space;
+
+// Export - Bot config
+exports.prefix = prefix;
+exports.dev = dev;
+exports.co_dev = co_dev;
+exports.ver = ver;
+exports.cmd_delay = cmd_delay;
+exports.status = status;
+exports.name = name;
+exports.subname = subname;
+exports.voice = voice;
+
+// Export - Login
+exports.login_name = login_name;
+exports.login_channel = login_channel;
+exports.login_version = login_version;
+exports.login_room = login_room;
+exports.login_url = login_url;
+exports.login_godword = login_godword;
+exports.io = io;
+exports.socket = socket;
+
+// Export - Socials
+exports.discord_url = discord_url;
+exports.twitter_url = twitter_url;
+exports.reddit_url = reddit_url;
+exports.insta_url = insta_url;
+exports.github_url = github_url;
+exports.pastebin_url = pastebin_url;
+exports.replit_url = replit_url;
+
+// Export - Extra/Misc
+exports.cmdcount = cmdcount;
+exports.wtf = wtf;
+exports.eight_ball = eight_ball;
+exports.bees = bees;
+exports.stickers = stickers;
+exports.spotify_playlists = spotify_playlists;
+exports.youtube_playlist = youtube_playlist;
+exports.vaporwave_ids = vaporwave_ids;
